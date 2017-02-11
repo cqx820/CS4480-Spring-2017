@@ -8,7 +8,7 @@ public class ProxyServer {
 
 		ServerSocket serverSocket = null;
 
-		int port = 8970;
+		int port = 6666;
 
 		try {
 			serverSocket = new ServerSocket(port);
@@ -21,7 +21,7 @@ public class ProxyServer {
 		try {
 			while (true) {
 				// serverSocket.accept();
-				new HttpRequest(serverSocket.accept()).parsing();
+				new Thread(new HttpRequest(serverSocket.accept())).start();
 			}
 		} catch (Exception ex) {
 			System.err.println(ex.getMessage());
@@ -37,15 +37,15 @@ public class ProxyServer {
 
 		// URL url = new
 		// URL("http://www.runoob.com/index.html?language=cn#j2se");
-		// System.out.println("URL 为：" + url.toString());
-		// System.out.println("协议为：" + url.getProtocol());
-		// System.out.println("验证信息：" + url.getAuthority());
-		// System.out.println("文件名及请求参数：" + url.getFile());
-		// System.out.println("主机名：" + url.getHost());
-		// System.out.println("路径：" + url.getPath());
-		// System.out.println("端口：" + url.getPort());
-		// System.out.println("默认端口：" + url.getDefaultPort());
-		// System.out.println("请求参数：" + url.getQuery());
-		// System.out.println("定位位置：" + url.getRef());
+		// System.out.println("URL \u4e3a\uff1a" + url.toString());
+		// System.out.println("\u534f\u8bae\u4e3a\uff1a" + url.getProtocol());
+		// System.out.println("\u9a8c\u8bc1\u4fe1\u606f\uff1a" + url.getAuthority());
+		// System.out.println("\u6587\u4ef6\u540d\u53ca\u8bf7\u6c42\u53c2\u6570\uff1a" + url.getFile());
+		// System.out.println("\u4e3b\u673a\u540d\uff1a" + url.getHost());
+		// System.out.println("\u8def\u5f84\uff1a" + url.getPath());
+		// System.out.println("\u7aef\u53e3\uff1a" + url.getPort());
+		// System.out.println("\u9ed8\u8ba4\u7aef\u53e3\uff1a" + url.getDefaultPort());
+		// System.out.println("\u8bf7\u6c42\u53c2\u6570\uff1a" + url.getQuery());
+		// System.out.println("\u5b9a\u4f4d\u4f4d\u7f6e\uff1a" + url.getRef());
 	}
 }
