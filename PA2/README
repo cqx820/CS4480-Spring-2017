@@ -1,0 +1,9 @@
+Open CADE Linux machine command and simply type 
+ 
+javac *.java
+
+to compile the code and type
+
+java Project
+
+to run the code. 
